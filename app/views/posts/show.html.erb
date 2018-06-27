@@ -2,7 +2,12 @@
 <%= @post.id %>번째 글
 <%= @post.title %>
 <%= @post.content %>
-
+<%=link_to '글보기', edit_post_path(@post) %>
+<%=link_to '삭제하기',
+            @post,
+            method: :delete,
+            data: {confirm: 'wannat delete'}
+             %>
 <a href="/posts/<%= @post.id %>/edit">수정하기</a>
 <a href="/posts/<%= @post.id %>" data-method="delete" data-confirm="삭제할래?">삭제하기</a>
 <hr />

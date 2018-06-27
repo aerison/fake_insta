@@ -1,6 +1,10 @@
 source 'https://rubygems.org'
 
-
+gem 'kaminari'
+gem 'simple_form'
+gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
+gem 'pry-rails'
+gem 'devise'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.10'
 # Use sqlite3 as the database for Active Record
