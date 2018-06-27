@@ -45,8 +45,15 @@ class PostsController < ApplicationController
   end
 
   def update
-    @post.update(post_params)
-    redirect_to "/posts/#{@post.id}"
+    respond_to do |format|
+      if @post.update(post_params)
+      format.html{redirect_to @post, notice:'modify success'}
+    else
+      format.html{render :edit}
+      format.json{render json: @post.errors}
+    # redirect_to "/posts/#{@post.id}"
+end
+  end
   end
 
   def destroy
